@@ -42,6 +42,11 @@ const ViewUserComponent = (props) => {
   const viewTask = () => {
     navigate(`/viewTask`);
   };
+  const handleLogout = () => {
+    // Perform logout logic (clear authentication information, etc.)
+    // For demonstration purposes, simply redirecting to the login page
+     navigate('/');
+  };
 
   useEffect(() => {
     UserService.getAllTasks(props.id).then((res) => {
@@ -60,7 +65,22 @@ const ViewUserComponent = (props) => {
       <button style={buttonView} onClick={viewTask}>
         ViewTask</button>
       </div>
-    </div>
+    
+  
+  <div style={{ position: 'relative' }}>
+  <button
+        type="button"
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          bottom: '150px',
+          right: '70px',
+        }}
+      >
+        Logout
+      </button>
+      </div>
+      </div>
   );
 };
 

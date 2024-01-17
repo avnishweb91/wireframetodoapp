@@ -66,7 +66,13 @@ const ViewTaskComponent = () => {
   };
   
   const handleGoBack = () => {
-    navigate('/');
+    navigate('/home');
+    };
+
+     const handleLogout = () => {
+      // Perform logout logic (clear authentication information, etc.)
+      // For demonstration purposes, simply redirecting to the login page
+       navigate('/');
     };
 
   const viewAllTasks = () => {
@@ -125,6 +131,19 @@ const ViewTaskComponent = () => {
       </button>
     </div>
   </div>
+  <div style={{ position: 'relative' }}>
+  <button
+        type="button"
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          bottom: '390px',
+          right: '20px',
+        }}
+      >
+        Logout
+      </button>
+      </div>
 </div>
 );};
 

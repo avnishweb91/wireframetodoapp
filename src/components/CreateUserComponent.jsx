@@ -26,7 +26,7 @@ const CreateUserComponent = () => {
   const saveTask = async () => {
     try {
       await UserService.createTask(task);
-      navigate('/'); // Redirect to the task list after adding a task
+      navigate('/home'); // Redirect to the task list after adding a task
     } catch (error) {
       console.error('Error adding task:', error);
       // Handle the error (e.g., show a user-friendly error message)
@@ -34,9 +34,13 @@ const CreateUserComponent = () => {
   };
 
   const cancel = () => {
-    navigate('/'); // Redirect to the task list without adding a task
+    navigate('/home'); // Redirect to the task list without adding a task
   };
-
+  const handleLogout = () => {
+    // Perform logout logic (clear authentication information, etc.)
+    // For demonstration purposes, simply redirecting to the login page
+     navigate('/');
+  };
   
 
   return (
@@ -115,6 +119,19 @@ const CreateUserComponent = () => {
           Back
         </button>
       </form>
+      <div style={{ position: 'relative' }}>
+  <button
+        type="button"
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          bottom: '500px',
+          right: '5px',
+        }}
+      >
+        Logout
+      </button>
+      </div>
     </div>
     </div>
     </div>

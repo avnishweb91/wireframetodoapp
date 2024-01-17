@@ -59,6 +59,11 @@ const ListUserComponent = () => {
     navigate('/viewTask');
     };
 
+    const handleLogout = () => {
+      // Perform logout logic (clear authentication information, etc.)
+      // For demonstration purposes, simply redirecting to the login page
+       navigate('/');
+    };
   useEffect(() => {
     const fetchTasks = async () => {
       try {
@@ -119,6 +124,19 @@ const ListUserComponent = () => {
         <button style={buttonView} onClick={handleGoBack}>
         Go Back
         </button>
+        <div style={{ position: 'relative' }}>
+      <button
+        type="button"
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          bottom: '240px',
+          right: '10px',
+        }}
+      >
+        Logout
+      </button>
+      </div>
       </div>
       </div>
     </div>

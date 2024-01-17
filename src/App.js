@@ -8,6 +8,8 @@ import CreateUserComponent from './components/CreateUserComponent';
 import ViewUserComponent from './components/ViewUserComponent';
 import UpdateUserComponent from './components/UpdateUserComponent';
 import ViewTaskComponent from './components/ViewTaskComponent';
+import LoginPage from './components/LoginPage';
+import RegistrationPage from './components/RegistrationPage';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
               <div style={{ backgroundColor:'#9b59b6'}}>
                 <div className="container">
                     <Routes> 
-                          <Route path = "/" element= {<ViewUserComponent />}></Route>
+                          <Route path="/" element={<LoginPage />}></Route>
+                          <Route path="/register" element={<RegistrationPage />}></Route>
+                          <Route path = "/home" element= {<ViewUserComponent />}></Route>
                           <Route path = "/add-list" element= {<CreateUserComponent/>}></Route>
                           <Route path = "/list/all" element = {<ListUserComponent/>}></Route>
                           <Route path = "/update/:id" element = {<UpdateUserComponent/>}></Route>

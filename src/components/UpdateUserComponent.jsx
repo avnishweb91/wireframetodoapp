@@ -64,6 +64,11 @@ const UpdateUserComponent = (props) => {
   const cancel = () => {
     navigate('/list/All');
   };
+  const handleLogout = () => {
+    // Perform logout logic (clear authentication information, etc.)
+    // For demonstration purposes, simply redirecting to the login page
+     navigate('/');
+  };
 
   return (
     <div>
@@ -138,6 +143,19 @@ const UpdateUserComponent = (props) => {
                 </button>
               </form>
             </div>
+            <div style={{ position: 'relative' }}>
+        <button
+        type="button"
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          bottom: '510px',
+          right: '5px',
+        }}
+      >
+        Logout
+      </button>
+      </div>
           </div>
         </div>
       </div>
